@@ -100,10 +100,16 @@ io.on("connection", async (socket) => {
 
 // --- Server start ---
 const PORT = process.env.PORT || 3000;
-const Server = server.listen(PORT, () => {
+
+const Server = server.listen(PORT, '0.0.0.0', () => {
   connectDB();
   console.log(`🚀 Server running on port ${PORT}`);
 });
+
+// const Server = server.listen(PORT, () => {
+//   connectDB();
+//   console.log(`🚀 Server running on port ${PORT}`);
+// });
 
 // --- Global error handling ---
 process.on("unhandledRejection", (err) => {
