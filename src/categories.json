@@ -1,0 +1,7 @@
+[
+  { "_id": { "$oid": "6906f348fae8b9e3e2125592" }, "name": "Science", "slug": "science" },
+  { "_id": { "$oid": "6906f348fae8b9e3e2125593" }, "name": "Fantasy", "slug": "fantasy" },
+  { "_id": { "$oid": "6906f348fae8b9e3e2125594" }, "name": "Mystery", "slug": "mystery" },
+  { "_id": { "$oid": "6906f348fae8b9e3e2125595" }, "name": "Romance", "slug": "romance" },
+  { "_id": { "$oid": "6906f348fae8b9e3e2125596" }, "name": "Horror", "slug": "horror" }
+]

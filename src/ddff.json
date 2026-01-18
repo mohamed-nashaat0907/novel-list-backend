@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "6906f352fae8b9e3e2125597"
+  },
+  "name": "Science Fiction",
+  "slug": "science-fiction",
+  "categorySlug": "science"
+},
+{
+  "_id": {
+    "$oid": "6906f352fae8b9e3e2125598"
+  },
+  "name": "High Fantasy",
+  "slug": "high-fantasy",
+  "categorySlug": "fantasy"
+},
+{
+  "_id": {
+    "$oid": "6906f352fae8b9e3e2125599"
+  },
+  "name": "Detective",
+  "slug": "detective",
+  "categorySlug": "mystery"
+},
+{
+  "_id": {
+    "$oid": "6906f352fae8b9e3e212559a"
+  },
+  "name": "Love Story",
+  "slug": "love-story",
+  "categorySlug": "romance"
+},
+{
+  "_id": {
+    "$oid": "6906f352fae8b9e3e212559b"
+  },
+  "name": "Thriller",
+  "slug": "thriller",
+  "categorySlug": "horror"
+}]
