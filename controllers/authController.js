@@ -50,23 +50,36 @@ exports.signup = async (req, res) => {
     });
 
     // ✅ Step 5: Send verification email
-    const verifyUrl = `${process.env.FRONTEND_URL}/verify-email/${otp}`;
 
-    // console.log("LOG-1: وصلنا قبل sendEmail");
-    // console.log("LOG-ENV:", {
-    //   MAIL_HOST: process.env.MAIL_HOST,
-    //   MAIL_PORT: process.env.MAIL_PORT,
-    //   MAIL_SECURE: process.env.MAIL_SECURE,
-    //   MAIL_USER: process.env.MAIL_USER ? "SET" : "MISSING",
-    //   MAIL_PASS: process.env.MAIL_PASS ? "SET" : "MISSING",
-    //   FRONTEND_URL: process.env.FRONTEND_URL,
+    // const verifyUrl = `${process.env.FRONTEND_URL}/verify-email/${otp}`;
+    // await sendEmail({
+    //   email,
+    //   subject: "Verify your email",
+    //   message: `Hi ${name}, please verify your email by clicking this link:\n${verifyUrl}\n\nThis link will expire in 10 minutes.`,
     // });
 
-    await sendEmail({
-      email,
-      subject: "Verify your email",
-      message: `Hi ${name}, please verify your email by clicking this link:\n${verifyUrl}\n\nThis link will expire in 10 minutes.`,
+    const verifyUrl = `${process.env.FRONTEND_URL}/verify-email/${otp}`;
+    console.log("LOG-SIGNUP: قبل sendEmail");
+    console.log("LOG-ENV:", {
+      MAIL_HOST: process.env.MAIL_HOST,
+      MAIL_PORT: process.env.MAIL_PORT,
+      MAIL_SECURE: process.env.MAIL_SECURE,
+      MAIL_USER: process.env.MAIL_USER ? "SET" : "MISSING",
+      MAIL_PASS: process.env.MAIL_PASS ? "SET" : "MISSING",
+      FRONTEND_URL: process.env.FRONTEND_URL,
     });
+
+    try {
+      await sendEmail({
+        email,
+        subject: "Verify your email",
+        message: `Hi ${name}, please verify your email by clicking this link:\n${verifyUrl}\n\nThis link will expire in 10 minutes.`,
+      });
+      console.log("LOG-SIGNUP: بعد sendEmail تم الإرسال بنجاح");
+    } catch (err) {
+      console.error("LOG-SIGNUP: خطأ أثناء إرسال الايميل:", err);
+      throw err; // أو يمكن إعادة رميه ليتم القبض عليه في catch الخارجي
+    }
 
     // ✅ Step 6: Respond success
     res.status(200).json({
