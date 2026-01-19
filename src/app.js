@@ -43,7 +43,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:4200",
   "http://localhost:5173",
-  "https://novel-list-frontend.vercel.app/"
+  "https://novel-list-frontend.vercel.app"
 ];
 
 const corsOptions = {
