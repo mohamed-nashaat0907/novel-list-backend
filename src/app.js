@@ -42,8 +42,8 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:4200",
-  "https://novel-nest-two.vercel.app", // ✅ your actual frontend
-  "http://localhost:5173", // أضف هذا
+  "http://localhost:5173",
+  "https://novel-list-frontend.vercel.app/"
 ];
 
 const corsOptions = {
