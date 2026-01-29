@@ -2,7 +2,7 @@ const expressAsyncHandler = require("express-async-handler");
 const AppError = require("../utils/AppError");
 const Cart = require("../models/cart");
 const Product = require("../models/product");
-const expiryDuration = 60 * 1000;
+const expiryDuration = 6 * 60 *60 * 1000;
 
 // Add item to cart
 const addToCart = expressAsyncHandler(async (req, res, next) => {
